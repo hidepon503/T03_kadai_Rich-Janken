@@ -1,3 +1,5 @@
+
+
 header{
   position: sticky;
   top:0;
@@ -132,6 +134,15 @@ nav.globalMenuSp.active {
 .title{
   font-size: xx-large;
 }
+.home-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-img {
+  width: 100%
+}
 br{
   display: block;
 }
@@ -145,10 +156,130 @@ br{
 
 /* main */
 
-/* hero section */
+/* home section */
 .home-img{
+  height: 80vh;
   background-color: #F3AAB9;
+  background-image: url(../img/hero.jpg);
 }
-/* .section-title{
+.section-title{
+  height: 100%;
   background-image: url(../img/maru.jpg);
-} */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.heroimg{
+  height: 80vh;
+  width: 100%;
+}
+
+/* about section */
+.about{
+  height: 80vh;
+  background-color: #F48B4A;
+}
+
+
+/* service section */
+.service{
+  height: 80vh;
+  background-color: #ffffff;
+}
+
+/* muching section */
+.muching {
+  height: 80vh;
+  background-color: #ffd34d;
+}
+
+.matching-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matching-start{
+  width: 30%;
+  height: 5rem;
+  background-color: #F48B4A;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.matching-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.muching-card{
+  width: 30%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 5px #F48B4A;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color:#675830;
+}
+.cat-name{
+  padding:1rem 0 1rem 0 ;
+  font-size:large;
+}
+.cat-img{
+  width: 50%;
+  height: auto;
+  border-radius: 100px;
+}
+.muching-card_discription{
+  text-align: center;
+}
+.item0{
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+}
+.item1{
+  width: 25%;
+  text-align: center;
+}
+.item2{
+  width: 25%;
+  text-align: center;
+}
+.item3{
+  width: 75%;
+  text-align: left;
+}
+.muching-button{
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/ashiato.png) ;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+/* price section */
+.price {
+  height: 80vh;
+  background-color: #ffffff;
+}
+
+/* faq section */
+.faq {
+  height: 80vh;
+  background-color: #F48B4A;
+}
+
+/* footer */
+footer{
+  height: 20vh;
+  background-color: #ffd34d;
+}

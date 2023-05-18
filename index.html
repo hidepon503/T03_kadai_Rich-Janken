@@ -15,7 +15,7 @@
 <body class="">
   <header class="w-full py-5 px-5 flex justify-between items-center ">
     <div class="w-full  flex items-center ">
-        <a href="" class="flex items-center ">
+        <a href="#home" class="flex items-center ">
         <img src="./img/ロゴ２.jpg" class="h-24 mr-5" alt="">
         <div class="title-text">
           <p class="">引取り補償付き<br>
@@ -55,23 +55,76 @@
     </div>
   </header>
   <main class="w-full ">
-    <div class="mainWrapper w-full text-red-600">
-      <section class="home w-full ">
-        <div class="home-container w-full flex">
+    <div class="mainWrapper w-full">
+
+      <!-- home section -->
+      <section id="home" class="home w-full ">
+        <div class="home-container w-full flex flex-row-reverse">
+          <div class="home-img w-1/2">
+            <img src="./img/nekotoroujin.jpg" class="heroimg" alt="">
+          </div>
           <div class="home-text w-1/2 flex flex-col items-center justify-center">
-            <div class="bg-[url('.')]"></div>
-            <img src="/img/maru.jpg" alt="">
+            <div class="section-title flex justify-center items-center p-24">
+              <h2>About</h2>
+            </div>
             <h2 class="text-5xl">ペットの<br>引き取り補償付き<br>仲介サービス</h2>
             <p class="text-2xl">ペットの引き取り補償付き仲介サービスを提供しています。<br>
               お客様のご希望に合わせて、ペットのお引き取りから<br>
               お届けまでをサポートいたし</p>
           </div>
-          <div class="home-img w-1/2">
-            <img src="./img/hero.jpg" class="cover" alt="">
-          </div>
         </div>
       </section>
-    
+      <section class="about">
+        <h2>About</h2>
+      </section>
+      <section class="service">
+        <h2>Service</h2>
+      </section>
+<!-- Muching section -->
+      <section class="muching">
+        <h2>Matching</h2>
+        <div class="matching-wrapper">
+    <!-- Maching Button  -->
+          <button id="matching-start" class="matching-start">
+            <p>Matching Start</p>
+          </button>
+          <div id="matching-container" class="hidden">
+            <div id="like" class="muching-button">
+              <p>Like</p>
+            </div>
+            <div id="muching-card" class="muching-card mx-6">
+              <h3 id="cat-name" class="cat-name"></h3>
+              <img id="img" src="" alt="猫の写真" class="cat-img">
+              <div class="muching-card_discription w-4/5 flex flex-wrap justify-center " >
+                <div id="area" class="item0"><p></p></div>
+                <div id="" class="item1"><p>性別</p></div>
+                <div id="jander" class="item1"><p></p></div>
+                <div id="" class="item1"><p>年齢</p></div>
+                <div id="" class="item1"><p><span id="age"></span>歳</p></div>
+                <div id="" class="item2"><p>種類</p></div>
+                <div id="type" class="item3"><p></p></div>
+                <div id="" class="item0 text-left flex justify-center">
+                  <p id="discrition">
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="next" class="muching-button">
+              <p>Next</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section class="price">
+        <h2>Price</h2>
+      </section>
+      <section class="faq">
+        <h2>FAQ</h2>
+      </section>
+
+
     </div>
   </main>
   <footer></footer>
