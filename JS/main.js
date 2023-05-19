@@ -33,15 +33,100 @@ const neru = "./img/cats/neru.jpg";
 const ran = "./img/cats/ran.jpg";
 const tama = "./img/cats/tama.jpg";
 
+
+// 心理テスト
+// 心理テスト開始ボタンを押して、1問目を表示
+$("#test-button").on("click", function () {
+    $("#test-button").fadeOut(1000, function () {
+        // 1問目の表示
+        // $("#").css("display", "none");
+        $("#test").fadeIn(1000);
+        
+    });
+});
+
+// 心理テスト
+var currentQuestion = 1;
+var answers = [];
+function showQuestion(questionNumber) {
+    $('.question').hide();
+    $('#question' + questionNumber).show();
+}
+function answerQuestion(answer) {
+    answers.push(answer);
+    currentQuestion++;
+    showQuestion(currentQuestion);
+    console.log(answers);
+}
+function answerQuestion2(answer) {
+    answers.push(answer);
+    currentQuestion++;
+    showQuestion(currentQuestion);
+    console.log(answers);
+}
+function answerQuestion3(answer) {
+    answers.push(answer);
+    currentQuestion++;
+    if (currentQuestion <= 4) {
+    showQuestion(currentQuestion);
+    } else {
+    showResult();
+    }
+    console.log(answers);
+}
+function answerQuestion4(answer) {
+    answers.push(answer);
+    currentQuestion++;
+    if (currentQuestion <= 4) {
+    showQuestion(currentQuestion);
+    } else {
+    showResult();
+    }
+    console.log(answers);
+}
+
+function showResult() {
+    var result = getResult();
+    $('.question').hide();
+    $('.result').show();
+    $('#category').text(result);
+}
+function getResult() {
+    var combination = answers.join('');
+    if (combination === 1111||1121||1122||1222||1212) {
+        return 'アクティブに外で遊ぶことが好きなタイプなあなたには, こちらの猫がおすすめです。';
+    } else if (combination === 2122||2112) {
+        return '社交的で人懐っこいタイプなあなたには、こちらの猫がおすすめです。';
+    } else if (combination === 2211||2212||2111) {
+    return '穏やかで落ち着いた雰囲気が好きなタイプなあなたには、こちらの猫がおすすめです。';
+    } else if (combination === 2222||2221||1211||2111||1221) {
+    return '独立心が強く自分の時間を大切にするタイプなあなたには、こちらの猫がおすすめです。';
+    } else {
+    return '分類できませんでした。';
+    }
+}
+$(document).ready(function () {
+    showQuestion(currentQuestion);
+});
+
+
 // マッチングスタートボタン
 $("#matching-start").on("click", function () {
-    $("#matching-start").css("display", "none");
-    $("#matching-container").css("display", "block");
-    $("#matching-container").css("display", "flex");
-    $("#matching-container").css("justify-content", "center");
-    $("#matching-container").css("align-items", "center");
+    $("#matching-test").fadeOut(1000);
+    $("#result").fadeOut(1000, function () {
+
+        $("#matching-container").fadeIn(1000);
+        $("#matching-container").css("display", "block");
+        $("#matching-container").css("display", "flex");
+        $("#matching-container").css("justify-content", "center");
+        $("#matching-container").css("align-items", "center");
+        // $("#matching-start").css("display", "hide");
+        // $("#matching-container").css("display", "block");
+        // $("#matching-container").css("display", "flex");
+        // $("#matching-container").css("justify-content", "center");
+        // $("#matching-container").css("align-items", "center");
     
-    // Nextボタンを押した時の処理
+        // Nextボタンを押した時の処理
         // 鳴き声をランダム再生
         const v = Math.floor(Math.random() * 4);
         let voice = "";
@@ -158,7 +243,7 @@ $("#matching-start").on("click", function () {
             $("#name").text(name);
             $("#area").text(area);
             $("#age").text(age);
-            $("#jander").text(jander); 
+            $("#jander").text(jander);
             $("#type").text(type);
             $("#discrition").text(discrition);
         } else if (i === 7) {
@@ -167,7 +252,7 @@ $("#matching-start").on("click", function () {
             area = "東京都";
             age = "3";
             jander = "メス";
-            type = "雑種"; 
+            type = "雑種";
             discrition = "ねねは、とても人懐っこくて、人が大好きな猫です。";
             $("#cat-name").text(name);
             $("#img").attr("src", imgUrl);
@@ -227,6 +312,7 @@ $("#matching-start").on("click", function () {
             $("#type").text(type);
             $("#discrition").text(discrition);
         };
+    });
 });
 
 // Next Buttonを押した時の処理
@@ -421,7 +507,6 @@ $("#next").on("click", function () {
 $("#muching-card,#like").on("click", function () {
     let iineCount = "";
     iineCount++;
-
     $("#iine").fadeIn(1000);
     $("#iine").delay(500);
     $("#iine").fadeOut(1000);
@@ -429,21 +514,4 @@ $("#muching-card,#like").on("click", function () {
 
 });
 
-// 心理テスト
-const q1 = "日中の活動はどちらが好きですか？";
-const a1_1 = "外で遊ぶこと";
-const a1_2 = "室内で過ごすこと";
-const q2 = "社交的な集まりに参加するのは好きですか？";
-const a2_1 = "好き";
-const a2_2 = "嫌い";
-const q3 = "落ち着いた雰囲気の場所が好きですか？";
-const a3_1 = "好き";
-const a3_2 = "嫌い";
-const q4 = "自分の時間を大切にする方ですか？";
-const a4_1 = "はい";
-const a4_2 = "いいえ";
-const typeA = "•	アクティブで外で遊ぶことが好きなタイプ";
-const typaB = "•	落ち着いた雰囲気の場所が好きなタイプ";
 
-
-    

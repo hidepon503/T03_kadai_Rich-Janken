@@ -185,8 +185,44 @@ br{
   height: 80vh;
   background-color: #ffffff;
 }
-
+.matching-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* muching section */
+/* 相性診断テストボタン */
+
+
+
+/* 心理テスト */
+        /* .question {
+          
+        } */
+    
+        .question p {
+          margin-bottom: 10px;
+        }
+    
+        .answer {
+          display: block;
+          margin-bottom: 5px;
+        }
+    
+        .result {
+          display: none;
+          text-align: center;
+          margin-top: 50px;
+        }
+
+
+
+
+
+
+
+/* マッチング機能 */
 .muching {
   height: 80vh;
   background-color: #ffd34d;
@@ -199,6 +235,18 @@ br{
   justify-content: center;
   align-items: center;
 }
+.matching-test{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test-button{
+  width: 100%;
+  padding: 3rem 0 3rem 0;
+  background-color: #F48B4A;
+  border-radius: 15px;
+}
 
 .matching-start{
   width: 30%;
@@ -207,12 +255,7 @@ br{
   color: #ffffff;
   border-radius: 20px;
 }
-.matching-container{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .muching-card{
   width: 30%;
@@ -271,9 +314,6 @@ br{
   width: 100%;
   height: 100%;
 }
-
-
-
 
 /* price section */
 .price {

@@ -84,27 +84,56 @@
       <section class="muching">
         <h2>Matching</h2>
         <div class="matching-wrapper">
-    <!-- Matching Q&A -->
-          <div id="Matching-q" class="w-full flex justify-center items-center">
-            <p id="question"></p>
-            <div id="answer" class="w-4/5 flex justify-around">
-              <button id="answer1"></button>
-              <button id="answer2"></button>
+          <div id="matching-test" class="matching-test">
+            <div id="test-box" class="w-full">
+              <!-- 心理テスト開始ボタン -->
+              <button id="test-button" class="test-button">猫との相性診断テスト</button>
+              <!-- 心理テストの問題をJavaScriptを利用して表示させる -->
+              <div id="test" class="test hidden">
+                <div class="question" id="question1">
+                  <p>問１：日中の活動はどちらが好きですか？</p>
+                  <button class="answer" onclick="answerQuestion('1')">外で遊ぶ</button>
+                  <button class="answer" onclick="answerQuestion('2')">室内で過ごす</button>
+                </div>
+                
+                <div class="question " id="question2">
+                  <p>問２：社交的な集まりに参加するのは好きですか？</p>
+                  <button class="answer" onclick="answerQuestion2('1')">はい</button>
+                  <button class="answer" onclick="answerQuestion2('2')">いいえ</button>
+                </div>
+                
+                <div class="question" id="question3">
+                  <p>問３：落ち着いた雰囲気の場所が好きですか？</p>
+                  <button class="answer" onclick="answerQuestion3('1')">はい</button>
+                  <button class="answer" onclick="answerQuestion3('2')">いいえ</button>
+                </div>
+                
+                <div class="question" id="question4">
+                  <p>問４：自分の時間を大切にする方ですか？</p>
+                  <button class="answer" onclick="answerQuestion4('1')">はい</button>
+                  <button class="answer" onclick="answerQuestion4('2')">いいえ</button>
+                </div>
+                
+                <div class="result" id="result">
+                  <h2>結果</h2>
+                  <p id="category"></p>
+                  <button id="matching-start" class="matching-start">Matching Start</button>
+                </div>
+              </div>
             </div>
-
-
           </div>
-    <!-- Matching Button  -->
-          <button id="matching-start" class="matching-start">
+          
+          <!-- Matching Button  -->
+          <!-- <button id="matching-start" class="matching-start hidden">
             <p>Matching Start</p>
-          </button>
+          </button> -->
           <div id="matching-container" class="hidden">
             <div id="like" class="muching-button">
               <p>Like</p>
             </div>
-    <!-- Matching card -->
+            <!-- Matching card -->
             <div id="muching-card" class="muching-card mx-6">
-        <!-- いいね -->
+            <!-- いいね -->
               <div id="iine" class="iine w-full hidden " >
                 <img class="w-full" src="./img/iine.png" alt="いいね">
               </div>
