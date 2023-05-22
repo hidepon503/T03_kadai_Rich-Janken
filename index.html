@@ -15,7 +15,7 @@
 <body class="">
   <header class="w-full py-5 px-5 flex justify-between items-center ">
     <div class="w-full  flex items-center ">
-        <a href="#home" class="flex items-center ">
+        <a href="" class="flex items-center ">
         <img src="./img/ロゴ２.jpg" class="h-24 mr-5" alt="">
         <div class="title-text">
           <p class="">引取り補償付き<br>
@@ -28,11 +28,11 @@
     <div class="w-2/3">
       <nav class="w-full">
         <ul class="navi w-full flex justify-around" >
-          <li><a href="">About</a></li>
-          <li><a href="">Service</a></li>
-          <li><a href="">Maching</a></li>
-          <li><a href="">Price</a></li>
-          <li><a href="">FAQ</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#matching">Matching</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
       <!-- レスポンシブ用のハンバーガーメニュー -->
@@ -64,59 +64,64 @@
             <img src="./img/nekotoroujin.jpg" class="heroimg" alt="">
           </div>
           <div class="home-text w-1/2 flex flex-col items-center justify-center">
-            <div class="section-title flex justify-center items-center p-24">
-              <h2>About</h2>
-            </div>
-            <h2 class="text-5xl">ペットの<br>引き取り補償付き<br>仲介サービス</h2>
+            <h1 class="home-title text-4xl">安心してペットと暮らすために</h1>
             <p class="text-2xl">ペットの引き取り補償付き仲介サービスを提供しています。<br>
               お客様のご希望に合わせて、ペットのお引き取りから<br>
               お届けまでをサポートいたし</p>
           </div>
         </div>
       </section>
-      <section class="about">
-        <h2>About</h2>
+      <section id="about" class="about">
+        <h2 id="" class="">About</h2>
       </section>
-      <section class="service">
+      <section id="service" class="service">
         <h2>Service</h2>
       </section>
 <!-- Muching section -->
-      <section class="muching">
-        <div class="matching-wrapper p-3">
-          <h2 class="sectionM">Matching</h2>
+<section id="matching" class="muching">
+        <h2 class="sectionM ">Matching</h2>
+        <div class="matching-wrapper ">
           <div id="matching-test" class="matching-test">
             <div id="test-box" class="w-full">
               <!-- 心理テスト開始ボタン -->
               <button id="test-button" class="test-button">猫との相性診断テスト</button>
               <!-- 心理テストの問題をJavaScriptを利用して表示させる -->
               <div id="test" class="test hidden">
-                <div class="question" id="question1">
+                <div class="question " id="question1">
                   <p>問１：日中の活動はどちらが好きですか？</p>
-                  <button class="answer" onclick="answerQuestion('1')">外で遊ぶ</button>
-                  <button class="answer" onclick="answerQuestion('2')">室内で過ごす</button>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion(1)">外で遊ぶ</button>
+                    <button class="answer" onclick="answerQuestion(2)">室内で過ごす</button>
+                  </div>
                 </div>
                 
                 <div class="question " id="question2">
                   <p>問２：社交的な集まりに参加するのは好きですか？</p>
-                  <button class="answer" onclick="answerQuestion2('1')">はい</button>
-                  <button class="answer" onclick="answerQuestion2('2')">いいえ</button>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion2(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion2(2)">いいえ</button>
+                  </div>
                 </div>
                 
                 <div class="question" id="question3">
                   <p>問３：落ち着いた雰囲気の場所が好きですか？</p>
-                  <button class="answer" onclick="answerQuestion3('1')">はい</button>
-                  <button class="answer" onclick="answerQuestion3('2')">いいえ</button>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion3(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion3(2)">いいえ</button>
+                  </div>
                 </div>
                 
                 <div class="question" id="question4">
                   <p>問４：自分の時間を大切にする方ですか？</p>
-                  <button class="answer" onclick="answerQuestion4('1')">はい</button>
-                  <button class="answer" onclick="answerQuestion4('2')">いいえ</button>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion4(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion4(2)">いいえ</button>
+                  </div>
                 </div>
                 
                 <div class="result" id="result">
-                  <h2>結果</h2>
                   <p id="category"></p>
+                  
                   <button id="matching-start" class="matching-start  hidden">Matching Start</button>
                   <button id="matching-start2" class="matching-start hidden">Matching Start</button>
                   <button id="matching-start3" class="matching-start hidden">Matching Start</button>
@@ -125,12 +130,9 @@
               </div>
             </div>
           </div>
-          
-          <!-- Matching Button  -->
-          <!-- <button id="matching-start" class="matching-start hidden">
-            <p>Matching Start</p>
-          </button> -->
-          <div id="matching-container" class="hidden">
+
+         <!-- 　マッチング -->
+          <div id="matching-container" class="matching-container hidden">
             <div id="like" class="muching-button">
               <p>Like</p>
             </div>
@@ -164,10 +166,10 @@
 
         </div>
       </section>
-      <section class="price">
+      <section id="price" class="price">
         <h2>Price</h2>
       </section>
-      <section class="faq">
+      <section id="faq" class="faq">
         <h2>FAQ</h2>
       </section>
 

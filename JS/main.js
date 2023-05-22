@@ -11,9 +11,6 @@ $(function() {
     });
 });
 // ハンバーガーメニューここまで
-
-
-
 // 猫の鳴き声
 const catV = new Audio("/audio/nakigoe.mp3");
 const catV2 = new Audio("/audio/nakigoe2.mp3");
@@ -47,10 +44,10 @@ $("#test-button").on("click", function () {
 
 // 心理テスト
 var currentQuestion = 1;
-var answers = [];
+let answers = [];
 function showQuestion(questionNumber) {
     $('.question').hide();
-    $('#question' + questionNumber).show();
+    $('#question' + questionNumber).fadeIn(1000);
 }
 function answerQuestion(answer) {
     answers.push(answer);
@@ -88,23 +85,23 @@ function answerQuestion4(answer) {
 function showResult() {
     var result = getResult();
     $('.question').hide();
-    $('.result').show();
+    $('.result').fadeIn(1000);
     $('#category').text(result);
 }
 function getResult() {
-    var combination = answers.join('');
-    if (combination === 1111||1121||1122||1222||1212) {
-        $("#matching-start").fadeIn(1);
-        return 'アクティブに外で遊ぶことが好きなタイプなあなたには, こちらの猫がおすすめです。';
-    } else if (combination === 2122 || 2112) {
-        $("#matching-start2").fadeIn(1);
-        return '社交的で人懐っこいタイプなあなたには、こちらの猫がおすすめです。';
-    } else if (combination === 2211 || 2212 || 2111) {
-        $("#matching-start3").fadeIn(1);
-    return '穏やかで落ち着いた雰囲気が好きなタイプなあなたには、こちらの猫がおすすめです。';
-    } else if (combination === 2222 || 2221 || 1211 || 2111 || 1221) {
-        $("#matching-start4").fadeIn(1);
-    return '独立心が強く自分の時間を大切にするタイプなあなたには、こちらの猫がおすすめです。';
+    let combination = answers.join('');
+    if (combination === '1111'||combination ==='1121'||combination ==='1122'||combination ==='1222'||combination ==='1212') {
+        $("#matching-start").fadeIn(1000);
+        return 'アクティブに外で遊ぶことが好きなタイプなあなたに、オススメの猫を紹介します。';
+    } else if (combination === '2122' ||combination === '2112') {
+        $("#matching-start2").fadeIn(1000);
+        return '社交的で人懐っこいタイプなあなたに、オススメの猫を紹介します。';
+    } else if (combination ==='2211' ||combination === '2212' || combination ==='2111') {
+        $("#matching-start3").fadeIn(1000);
+    return '穏やかで落ち着いた雰囲気が好きなタイプなあなたに、オススメの猫を紹介します。';
+    } else if (combination ==='2222' || combination ==='2221' || combination ==='1211' || combination ==='2111' || combination ==='1221') {
+        $("#matching-start4").fadeIn(1000);
+    return '独立心が強く自分の時間を大切にするタイプなあなたに、オススメの猫を紹介します。';
     } else {
     return '分類できませんでした。';
     }
@@ -115,7 +112,7 @@ $(document).ready(function () {
 
 
 // マッチングスタート1ボタン
-$("#matching-start",).on("click", function () {
+$("#matching-start").on("click", function () {
     $("#matching-test").fadeOut(1000);
     $("#result").fadeOut(1000, function () {
 
@@ -324,9 +321,7 @@ $("#matching-start",).on("click", function () {
             catV3.play();
         } else {
             catV4.play();
-        };
-        
-
+        }
         // muching-cardのランダム表示
         const i = Math.floor(Math.random() * 10);
         let imgUrl = "";
@@ -525,8 +520,7 @@ $("#matching-start2",).on("click", function () {
         };
         
         // muching-cardのランダム表示
-        const i = Math.floor(Math.random() * 5);
-        
+        const i = Math.floor(Math.random() * 5)
         if (i === 1) {
             $("#cat-name").text('レオ');
             $("#img").attr("src", '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg');
@@ -573,7 +567,7 @@ $("#matching-start2",).on("click", function () {
     // Next Buttonを押した時の処理
     $("#next").on("click", function () {
            // 鳴き声をランダム再生
-        const v = Math.floor(Math.random() * 4);
+        const v = Math.floor(Math.random() * 5);
         let voice = "";
         if (v === 1) {
             catV.play();
@@ -581,13 +575,14 @@ $("#matching-start2",).on("click", function () {
             catV2.play();
         } else if (v === 3) {
             catV3.play();
-        } else {
+        } else if(v === 4) {
             catV4.play();
+
         };
         
         // next-buttonを押した時のmuching-cardのランダム表示
         // 上のif文と同じ
-
+        const i = Math.floor(Math.random() * 4);
         if (i === 1) {
             $("#cat-name").text('レオ');
             $("#img").attr("src", '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg');
@@ -625,7 +620,7 @@ $("#matching-start2",).on("click", function () {
 });
 
 // マッチングスタート３ボタンを押した時に表示
-$("#matching-start2",).on("click", function () {
+$("#matching-start3",).on("click", function () {
     $("#matching-test").fadeOut(1000);
     $("#result").fadeOut(1000, function () {
 
@@ -701,7 +696,7 @@ $("#matching-start2",).on("click", function () {
         
 
         // muching-cardのランダム表示
-
+        const i = Math.floor(Math.random() * 4);
         if (i === 1) {
             $("#cat-name").text('ベル');
             $("#img").attr("src", '../img/cats3/calmness-g44ffdd400_640.jpg');
@@ -738,7 +733,7 @@ $("#matching-start2",).on("click", function () {
     });
 });
 // マッチングスタート４ボタンを押した時に表示
-$("#matching-start2",).on("click", function () {
+$("#matching-start4",).on("click", function () {
     $("#matching-test").fadeOut(1000);
     $("#result").fadeOut(1000, function () {
 
@@ -815,7 +810,7 @@ $("#matching-start2",).on("click", function () {
         
 
         // muching-cardのランダム表示
-
+        const i = Math.floor(Math.random() * 4);
         if (i === 1) {
             $("#cat-name").text('マロン');
             $("#img").attr("src", '../img/cats4/2670442_s.jpg');
