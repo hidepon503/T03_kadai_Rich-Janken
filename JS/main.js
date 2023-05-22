@@ -94,12 +94,16 @@ function showResult() {
 function getResult() {
     var combination = answers.join('');
     if (combination === 1111||1121||1122||1222||1212) {
+        $("#matching-start").fadeIn(1);
         return 'アクティブに外で遊ぶことが好きなタイプなあなたには, こちらの猫がおすすめです。';
-    } else if (combination === 2122||2112) {
+    } else if (combination === 2122 || 2112) {
+        $("#matching-start2").fadeIn(1);
         return '社交的で人懐っこいタイプなあなたには、こちらの猫がおすすめです。';
-    } else if (combination === 2211||2212||2111) {
+    } else if (combination === 2211 || 2212 || 2111) {
+        $("#matching-start3").fadeIn(1);
     return '穏やかで落ち着いた雰囲気が好きなタイプなあなたには、こちらの猫がおすすめです。';
-    } else if (combination === 2222||2221||1211||2111||1221) {
+    } else if (combination === 2222 || 2221 || 1211 || 2111 || 1221) {
+        $("#matching-start4").fadeIn(1);
     return '独立心が強く自分の時間を大切にするタイプなあなたには、こちらの猫がおすすめです。';
     } else {
     return '分類できませんでした。';
@@ -110,8 +114,8 @@ $(document).ready(function () {
 });
 
 
-// マッチングスタートボタン
-$("#matching-start").on("click", function () {
+// マッチングスタート1ボタン
+$("#matching-start",).on("click", function () {
     $("#matching-test").fadeOut(1000);
     $("#result").fadeOut(1000, function () {
 
@@ -120,14 +124,6 @@ $("#matching-start").on("click", function () {
         $("#matching-container").css("display", "flex");
         $("#matching-container").css("justify-content", "center");
         $("#matching-container").css("align-items", "center");
-        // $("#matching-start").css("display", "hide");
-        // $("#matching-container").css("display", "block");
-        // $("#matching-container").css("display", "flex");
-        // $("#matching-container").css("justify-content", "center");
-        // $("#matching-container").css("align-items", "center");
-    
-        // Nextボタンを押した時の処理
-        // 鳴き声をランダム再生
         const v = Math.floor(Math.random() * 4);
         let voice = "";
         if (v === 1) {
@@ -313,205 +309,552 @@ $("#matching-start").on("click", function () {
             $("#discrition").text(discrition);
         };
     });
+
+
+    // Next Buttonを押した時の処理
+    $("#next").on("click", function () {
+           // 鳴き声をランダム再生
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+
+        // muching-cardのランダム表示
+        const i = Math.floor(Math.random() * 10);
+        let imgUrl = "";
+        let name = "";
+        let area = "";
+        let age = "";
+        let jander = "";
+        let type = "";
+        let discrition = "";
+
+        if (i === 1) {
+            imgUrl = umi;
+            name = "うみ";
+            area = "東京都";
+            age = "3";
+            jander = "メス";
+            type = "雑種";
+            discrition = "うみは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 2) {
+            imgUrl = buu;
+            name = "ぶー";
+            area = "東京都";
+            age = "2";
+            jander = "オス";
+            type = "雑種";
+            discrition = "ぶーは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 3) {
+            imgUrl = kiki;
+            name = "きき";
+            area = "東京都";
+            age = "1";
+            jander = "メス";
+            type = "雑種";
+            discrition = "ききは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 4) {
+            imgUrl = maru;
+            name = "まる";
+            area = "東京都";
+            age = "3";
+            jander = "オス";
+            type = "雑種";
+            discrition = "まるは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 5) {
+            imgUrl = mi;
+            name = "みー";
+            area = "東京都";
+            age = "3";
+            jander = "メス";
+            type = "雑種";
+            discrition = "みーは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 6) {
+            imgUrl = mohu;
+            name = "もふ";
+            area = "東京都";
+            age = "3";
+            jander = "メス";
+            type = "雑種";
+            discrition = "もふは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander); 
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 7) {
+            imgUrl = nene;
+            name = "ねね";
+            area = "東京都";
+            age = "3";
+            jander = "メス";
+            type = "雑種"; 
+            discrition = "ねねは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 8) {
+            imgUrl = neru;
+            name = "ねる";
+            area = "東京都";
+            age = "3";
+            jander = "オス";
+            type = "雑種";
+            discrition = "ねるは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        } else if (i === 9) {
+            imgUrl = ran;
+            name = "らん";
+            area = "東京都";
+            age = "3";
+            jander = "メス";
+            type = "雑種";
+            discrition = "らんは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        }
+        else {
+            imgUrl = tama;
+            name = "たま";
+            area = "東京都";
+            age = "3";
+            jander = "オス";
+            type = "雑種";
+            discrition = "たまは、とても人懐っこくて、人が大好きな猫です。";
+            $("#cat-name").text(name);
+            $("#img").attr("src", imgUrl);
+            $("#name").text(name);
+            $("#area").text(area);
+            $("#age").text(age);
+            $("#jander").text(jander);
+            $("#type").text(type);
+            $("#discrition").text(discrition);
+        };
+    });
 });
 
-// Next Buttonを押した時の処理
-$("#next").on("click", function () {
-       // 鳴き声をランダム再生
-    const v = Math.floor(Math.random() * 4);
-    let voice = "";
-    if (v === 1) {
-        catV.play();
-    } else if (v === 2) {
-        catV2.play();
-    } else if (v === 3) {
-        catV3.play();
-    } else {
-        catV4.play();
-    };
-    
-    // muching-cardのランダム表示
-    const i = Math.floor(Math.random() * 10);
-    let imgUrl = "";
-    let name = "";
-    let area = "";
-    let age = "";
-    let jander = "";
-    let type = "";
-    let discrition = "";
-    
-    if (i === 1) {
-        imgUrl = umi;
-        name = "うみ";
-        area = "東京都";
-        age = "3";
-        jander = "メス";
-        type = "雑種";
-        discrition = "うみは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 2) {
-        imgUrl = buu;
-        name = "ぶー";
-        area = "東京都";
-        age = "2";
-        jander = "オス";
-        type = "雑種";
-        discrition = "ぶーは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 3) {
-        imgUrl = kiki;
-        name = "きき";
-        area = "東京都";
-        age = "1";
-        jander = "メス";
-        type = "雑種";
-        discrition = "ききは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 4) {
-        imgUrl = maru;
-        name = "まる";
-        area = "東京都";
-        age = "3";
-        jander = "オス";
-        type = "雑種";
-        discrition = "まるは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 5) {
-        imgUrl = mi;
-        name = "みー";
-        area = "東京都";
-        age = "3";
-        jander = "メス";
-        type = "雑種";
-        discrition = "みーは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 6) {
-        imgUrl = mohu;
-        name = "もふ";
-        area = "東京都";
-        age = "3";
-        jander = "メス";
-        type = "雑種";
-        discrition = "もふは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander); 
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 7) {
-        imgUrl = nene;
-        name = "ねね";
-        area = "東京都";
-        age = "3";
-        jander = "メス";
-        type = "雑種"; 
-        discrition = "ねねは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 8) {
-        imgUrl = neru;
-        name = "ねる";
-        area = "東京都";
-        age = "3";
-        jander = "オス";
-        type = "雑種";
-        discrition = "ねるは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    } else if (i === 9) {
-        imgUrl = ran;
-        name = "らん";
-        area = "東京都";
-        age = "3";
-        jander = "メス";
-        type = "雑種";
-        discrition = "らんは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    }
-    else {
-        imgUrl = tama;
-        name = "たま";
-        area = "東京都";
-        age = "3";
-        jander = "オス";
-        type = "雑種";
-        discrition = "たまは、とても人懐っこくて、人が大好きな猫です。";
-        $("#cat-name").text(name);
-        $("#img").attr("src", imgUrl);
-        $("#name").text(name);
-        $("#area").text(area);
-        $("#age").text(age);
-        $("#jander").text(jander);
-        $("#type").text(type);
-        $("#discrition").text(discrition);
-    };
+// マッチングスタート2ボタンを押した時に表示
+$("#matching-start2",).on("click", function () {
+    $("#matching-test").fadeOut(1000);
+    $("#result").fadeOut(1000, function () {
+
+        $("#matching-container").fadeIn(1000);
+        $("#matching-container").css("display", "block");
+        $("#matching-container").css("display", "flex");
+        $("#matching-container").css("justify-content", "center");
+        $("#matching-container").css("align-items", "center");
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+        // muching-cardのランダム表示
+        const i = Math.floor(Math.random() * 5);
+        
+        if (i === 1) {
+            $("#cat-name").text('レオ');
+            $("#img").attr("src", '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg');
+            $("#area").text('東京都');
+            $("#age").text(5);
+            $("#jander").text('オス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('きなこ');
+            $("#img").attr("src", '../img/cats2/photo-1545315171-cc80c905c252.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('6');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('むぎ');
+            $("#img").attr("src", '../img/cats2/photo-1554172438-267576c2c6da.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('5');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('ルナ');
+            $("#img").attr("src", '../img/cats2/photo-1638826595775-e2eae86cda8e.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('7');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 5) {
+            $("#cat-name").text('ラテ');
+            $("#img").attr("src", '../img/cats2/photo-1638826596253-45c356e832bf.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('9');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
+
+    // Next Buttonを押した時の処理
+    $("#next").on("click", function () {
+           // 鳴き声をランダム再生
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+        // next-buttonを押した時のmuching-cardのランダム表示
+        // 上のif文と同じ
+
+        if (i === 1) {
+            $("#cat-name").text('レオ');
+            $("#img").attr("src", '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg');
+            $("#area").text('東京都');
+            $("#age").text(5);
+            $("#jander").text('オス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('きなこ');
+            $("#img").attr("src", '../img/cats2/photo-1545315171-cc80c905c252.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('6');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('むぎ');
+            $("#img").attr("src", '../img/cats2/photo-1554172438-267576c2c6da.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('5');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('ルナ');
+            $("#img").attr("src", '../img/cats2/photo-1638826595775-e2eae86cda8e.jpeg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('7');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
 });
 
-$("#muching-card,#like").on("click", function () {
-    let iineCount = "";
-    iineCount++;
+// マッチングスタート３ボタンを押した時に表示
+$("#matching-start2",).on("click", function () {
+    $("#matching-test").fadeOut(1000);
+    $("#result").fadeOut(1000, function () {
+
+        $("#matching-container").fadeIn(1000);
+        $("#matching-container").css("display", "block");
+        $("#matching-container").css("display", "flex");
+        $("#matching-container").css("justify-content", "center");
+        $("#matching-container").css("align-items", "center");
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+        // muching-cardのランダム表示
+        const i = Math.floor(Math.random() * 4);
+        
+        if (i === 1) {
+            $("#cat-name").text('ベル');
+            $("#img").attr("src", '../img/cats3/calmness-g44ffdd400_640.jpg');
+            $("#area").text('東京都');
+            $("#age").text(5);
+            $("#jander").text('メス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('ココ');
+            $("#img").attr("src", '../img/cats3/cat-g12833497f_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('7');
+            $("#type").text('メス');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('ルイ');
+            $("#img").attr("src", '../img/cats3/lion-gb09b9adc1_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('6');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('モモ');
+            $("#img").attr("src", '../img/cats3/relaxation-gef56a588f_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('8');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
+
+    // Next Buttonを押した時の処理
+    $("#next").on("click", function () {
+           // 鳴き声をランダム再生
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+
+        // muching-cardのランダム表示
+
+        if (i === 1) {
+            $("#cat-name").text('ベル');
+            $("#img").attr("src", '../img/cats3/calmness-g44ffdd400_640.jpg');
+            $("#area").text('東京都');
+            $("#age").text(5);
+            $("#jander").text('メス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('ココ');
+            $("#img").attr("src", '../img/cats3/cat-g12833497f_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('7');
+            $("#type").text('メス');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('ルイ');
+            $("#img").attr("src", '../img/cats3/lion-gb09b9adc1_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('6');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('モモ');
+            $("#img").attr("src", '../img/cats3/relaxation-gef56a588f_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('8');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
+});
+// マッチングスタート４ボタンを押した時に表示
+$("#matching-start2",).on("click", function () {
+    $("#matching-test").fadeOut(1000);
+    $("#result").fadeOut(1000, function () {
+
+        $("#matching-container").fadeIn(1000);
+        $("#matching-container").css("display", "block");
+        $("#matching-container").css("display", "flex");
+        $("#matching-container").css("justify-content", "center");
+        $("#matching-container").css("align-items", "center");
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+        // muching-cardのランダム表示
+        const i = Math.floor(Math.random() * 4);
+        
+        if (i === 1) {
+            $("#cat-name").text('マロン');
+            $("#img").attr("src", '../img/cats4/2670442_s.jpg');
+            $("#area").text('東京都');
+            $("#age").text(3);
+            $("#jander").text('オス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('うに');
+            $("#img").attr("src", '../img/cats4/3848209_s.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('5');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('ルル');
+            $("#img").attr("src", '../img/cats4/cat-gb47a1e0e1_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('4');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('琥珀');
+            $("#img").attr("src", '../img/cats4/kat-g2da8cdb7e_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('9');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
+
+
+    // Next Buttonを押した時の処理
+    $("#next").on("click", function () {
+           // 鳴き声をランダム再生
+        const v = Math.floor(Math.random() * 4);
+        let voice = "";
+        if (v === 1) {
+            catV.play();
+        } else if (v === 2) {
+            catV2.play();
+        } else if (v === 3) {
+            catV3.play();
+        } else {
+            catV4.play();
+        };
+        
+
+        // muching-cardのランダム表示
+
+        if (i === 1) {
+            $("#cat-name").text('マロン');
+            $("#img").attr("src", '../img/cats4/2670442_s.jpg');
+            $("#area").text('東京都');
+            $("#age").text(3);
+            $("#jander").text('オス');
+            $("#type").text('雑種');
+            $("#discrition").text('TEXT');
+        } else if (i === 2) {
+            $("#cat-name").text('うに');
+            $("#img").attr("src", '../img/cats4/3848209_s.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('5');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 3) {
+            $("#cat-name").text('ルル');
+            $("#img").attr("src", '../img/cats4/cat-gb47a1e0e1_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('メス');
+            $("#age").text('4');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        } else if (i === 4) {
+            $("#cat-name").text('琥珀');
+            $("#img").attr("src", '../img/cats4/kat-g2da8cdb7e_640.jpg');
+            $("#area").text('東京都');
+            $("#jander").text('オス');
+            $("#age").text('9');
+            $("#type").text('雑種');
+            $("#discrition").text('text');
+        };
+    });
+});
+
+
+// いいねしたときの処理
+$("#like,#matching-card").on("click", function () {
     $("#iine").fadeIn(1000);
-    $("#iine").delay(500);
-    $("#iine").fadeOut(1000);
-    localStorage.setItem("iine", );
-
+    $("#iine").delay(1000).fadeOut(1000);
 });
-
-
